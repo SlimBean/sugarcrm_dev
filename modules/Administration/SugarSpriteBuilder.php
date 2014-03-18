@@ -463,6 +463,8 @@ background-position: -{$offset_x}px -{$offset_y}px;
      * Private function to initialize creating the sprite canvas image
      */
 	private function initSpriteImg($w, $h) {
+		if($w > 1024) $w = 1024;
+    		if($h > 1024) $h = 1024;
 		$this->spriteImg = imagecreatetruecolor($w,$h);
 		$transparent = imagecolorallocatealpha($this->spriteImg, 0, 0, 0, 127);
 		imagefill($this->spriteImg, 0, 0, $transparent);
